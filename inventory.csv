@@ -2,5 +2,5 @@ ingredient,stock,threshold,supplier_email
 coffee_beans,500,200,supplier@coffee.com
 milk,1000,300,supplier@dairy.com
 tea_leaves,300,100,supplier@tea.com
-bread,10,40,supplier@bakery.com
+bread,30,40,supplier@bakery.com
 cheese,400,150,supplier@cheese.com
