@@ -10,7 +10,7 @@ RECIPE_MAP = {
     "sandwich": {"bread": 2, "cheese": 20}
 }
 
-st.title("☕ Smart Cafe Inventory Management", width="content")
+st.title("☕ Cafe Inventory Management System", width="content")
 st.subheader("Current Orders")
 st.dataframe(orders, hide_index=True)
 used_inventory = {}
