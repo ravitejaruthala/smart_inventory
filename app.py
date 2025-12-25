@@ -14,6 +14,7 @@ st.title("☕ Smart Cafe Inventory Management")
 st.subheader("Current Orders")
 st.dataframe(orders)
 used_inventory = {}
+
 for _, row in orders.iterrows():
     item = row["item"]
     qty = row["quantity"]
@@ -32,13 +33,13 @@ if st.button("Check Inventory"):
         if remaining <= threshold:
             alerts.append((ingredient, remaining, row["supplier_email"]))
     st.dataframe(inventory)
+    def inventory_status():
+        for ingredient, remaining, email in alerts:
+            st.toast(f"📧 Order sent to {email} for {ingredient}")
     if alerts:
         st.warning("⚠ Inventory Below Threshold!")
         for ingredient, remaining, email in alerts:
             st.write(f"🔴 {ingredient}: {remaining} units left.")
-        if st.button("Inform Supplier", icon="🚨") and alerts:
-            for ingredient, remaining, email in alerts:
-                st.toast(f"📧 Order sent to {email} for {ingredient}")
-            
+        st.button("Inform Supplier", icon="🚨") and alerts                
     else:
         st.success("✅ Inventory levels are healthy!")
