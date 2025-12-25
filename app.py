@@ -36,6 +36,7 @@ if st.button("Check Inventory"):
         st.warning("⚠ Inventory Below Threshold!")
         for ingredient, remaining, email in alerts:
             st.write(f"🔴 {ingredient}: {remaining} units left")
+            st.write(alerts)
         if st.button("Inform Supplier"):
             st.write("HI")
             for ingredient, remaining, email in alerts:
