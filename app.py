@@ -10,9 +10,9 @@ RECIPE_MAP = {
     "sandwich": {"bread": 2, "cheese": 20}
 }
 
-st.title("☕ Smart Cafe Inventory Management")
+st.title("☕ Smart Cafe Inventory Management", width="content")
 st.subheader("Current Orders")
-st.dataframe(orders)
+st.dataframe(orders, hide_index=True)
 used_inventory = {}
 
 for _, row in orders.iterrows():
@@ -32,7 +32,7 @@ if st.button("Check Inventory"):
         inventory.loc[index, "stock"] = remaining
         if remaining <= threshold:
             alerts.append((ingredient, remaining, row["supplier_email"]))
-    st.dataframe(inventory)
+    st.dataframe(inventory, hide_index=True)
     def inventory_status():
         for ingredient, remaining, email in alerts:
             st.toast(f"📧 Order sent to {email} for {ingredient}")
