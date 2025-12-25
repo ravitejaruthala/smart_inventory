@@ -37,6 +37,7 @@ if st.button("Check Inventory"):
         for ingredient, remaining, email in alerts:
             st.write(f"🔴 {ingredient}: {remaining} units left")
         if st.button("Inform Supplier"):
+            st.write(alerts)
             for ingredient, remaining, email in alerts:
                 st.toast(f"📧 Order sent to {email} for {ingredient}")
     else:
