@@ -40,6 +40,6 @@ if st.button("Check Inventory"):
         st.warning("⚠ Inventory Below Threshold!")
         for ingredient, remaining, email in alerts:
             st.write(f"🔴 {ingredient}: {remaining} units left.")
-        st.button("Inform Supplier", icon="🚨") and alerts                
+        st.button("Inform Supplier", icon="🚨", on_click = inventory_status)               
     else:
         st.success("✅ Inventory levels are healthy!")
